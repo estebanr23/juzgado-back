@@ -2,9 +2,9 @@
 
 class test
 {
-    public $attr_uno;
+    public $attrUno;
 
-    public function fn_1()
+    public function fn_uno()
     {
         echo 'test';
     }
