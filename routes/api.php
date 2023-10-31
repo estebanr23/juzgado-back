@@ -1,19 +1,10 @@
 <?php
 
+use App\Http\Controllers\PaisController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('paises', [PaisController::class, 'index'])->name('api.v1.paises.index');
+Route::get('paises/{pais}', [PaisController::class, 'show'])->name('api.v1.paises.show');
+Route::post('paises', [PaisController::class, 'store'])->name('api.v1.paises.store');
+Route::put('paises/{pais}', [PaisController::class, 'update'])->name('api.v1.paises.update');
